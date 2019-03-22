@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.awt.color.*;
+package fr.src.echec;
 /**
  * Cette classe concerne les joueurs et leurs méthodes
  *
@@ -10,10 +9,7 @@ public class Joueur
 {
     // mode == 0 ? : IA || mode == 1 ? : Player
     private int mode;
-    // couleur du joueur
-    private Color couleur;
-    // Liste des pièces restantes au joueur
-    private ArrayList<Piece> p_Liste;
+   
     /**
      * Constructeur d'objets de classe Joueur
      */
@@ -21,11 +17,6 @@ public class Joueur
     {
         // Joueur ou IA ?
         this.mode = mode;
-        // Liste des pièces du joueur pleine au départ
-        for(int i=0; i<nb_pieces; i++)
-        {
-            
-        }
     }
 
     /**

@@ -1,4 +1,4 @@
-
+package fr.src.echec;
 /**
  * Cette classe représente le terrain et ses méthodes, qui est unique et contient un tableau de type Case, 
  * c'est par lui que tout se fera.
@@ -9,7 +9,7 @@
 public class Terrain
 {
     private final int nb_case = 8;
-    private Case[][] terrain;    
+    private Case terrain[][];    
 
     /**
      * Constructeur d'objets de classe Terrain
@@ -23,7 +23,7 @@ public class Terrain
     	{
     		for(int j=0; j<nb_case; j++)
     		{
-    			this.terrain[i][j].Case();
+    			this.terrain[i][j]= new Case();
     		}
     	}
     }

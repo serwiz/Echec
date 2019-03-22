@@ -1,6 +1,6 @@
-
+package fr.src.echec;
 /**
- * Cette classe représente les cases (abscisse, ordonnés, contenu) et leurs méthodes.
+ * Cette classe représente les cases contenu et leurs méthodes.
  *
  * @author Serhan Wissam
  * @version 18/03/2019
