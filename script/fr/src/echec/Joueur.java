@@ -18,6 +18,13 @@ public class Joueur
         // Joueur ou IA ?
         this.mode = mode;
     }
+    
+    public int getMode()
+    {
+    	if(this.mode == 1) System.out.println("Player");
+    	else System.out.println("IA");
+    	return this.mode;
+    }
 
     /**
      * Un exemple de méthode - remplacez ce commentaire par le vôtre
