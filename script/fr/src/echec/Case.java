@@ -59,6 +59,7 @@ public class Case
      */
     public Piece retourneContenu()
     {
+    	if(this.contenu != null) Systeme.out.println("La case contient la pièce" + this.contenu. getName())
     	return this.contenu;
     }
     /**

@@ -23,14 +23,52 @@ public class Terrain
     	{
     		for(int j=0; j<nb_case; j++)
     		{
-    			this.terrain[i][j]= new Case(i, j);
+    			this.terrain [i] [j] = new Case (i, j);
     		}
     	}
     }
-   
-    public int deplacement(Case c_initial, Case c_final)
+    
+    public boolean existeObstacle(Case c_initial, Case c_final)
     {
-    	return 0;
+    	switch(c_initial.retourneContenu().getName())
+    	{
+    		case "Pion":
+    			
+    			break;
+    		case "Tour":
+    			
+    			break;
+    		case "Roi":
+    			
+    			break;
+    		case "Reine":
+    			
+    			break;
+    		case "Fou":
+    			
+    			break;
+    		case "Cavalier":
+    			return false;
+    			break;
+    		default:
+    			return false;
+    			break;
+    			
+    	}
+    }
+   
+    public boolean deplacement (Case c_initial, Case c_final)
+    {
+    	if(!(c_initial.estVide()) && this.terrain [c_initial.getX()] [c_initial.getY()].retourneContenu().deplacement() )
+    	{
+    		c_final.changeContenu (c_initial.retourneContenu());
+    		c_initial.changeContenu (null);
+    		return true;
+    	}
+    	else
+    	{
+    		return false;
+    	}
     }
     
 }

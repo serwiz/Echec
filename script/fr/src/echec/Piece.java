@@ -1,5 +1,5 @@
 package fr.src.echec;
-import java.awt.Color;;
+import java.awt.Color;
 /**
  * Cette classe concerne les pieces du jeu d'échec et leurs méthodes.
  *
@@ -10,6 +10,7 @@ public abstract class Piece
 {
     // Couleur des pièces (noire ou blanche)
     protected Color couleur;
+    protected abstract String name;
     
     /**
      * Constructeur d'objets de classe Pieces
@@ -20,6 +21,11 @@ public abstract class Piece
         // initialisation des variables d'instance
         this.couleur = couleur;
     }
+    
+    public String getName()
+    {
+    	return this.name;
+    }
     /**
      * @return			La couleur de la pièce
      */
@@ -28,7 +34,7 @@ public abstract class Piece
     	return this.couleur;
     }
     /**
-     * Permet de tester si le déplacement est valide en fonction de la pièce à bouger
+     * Permet de tester si le déplacement est valide en fonction de la pièce à bouger (sans prendre en compte la présence de pièce alliée)
      * 
 	 * @param			c_initial, c_final respectivement la case où se situe la pièce et la case où elle souhaite aller
 	 * @return			Vrai si le deplacement est juste et que la case ne contient pas une piece de la même équipe
