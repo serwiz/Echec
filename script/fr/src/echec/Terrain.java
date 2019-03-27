@@ -28,15 +28,31 @@ public class Terrain
     	}
     }
     
-    public boolean existeObstacle(Case c_initial, Case c_final)
+   public boolean existeObstacle (Case c_initial, Case c_final)
     {
-    	switch(c_initial.retourneContenu().getName())
+	   int i;
+    	switch (c_initial.retourneContenu().getName())
     	{
     		case "Pion":
+    			if ((c_initial.getX()+1 == c_final.getX() || c_final.getX() == c_initial.getX()-1) && c_final.getY() == c_initial.getY()+1)
+    				return false;
     			
-    			break;
+    			for (i=c_initial.getY()+1; i<c_final.getY()+1; ++i)
+    			{
+    				if(this.terrain[c_initial.getX()] [i].retourneContenu() != null)
+    					return true;
+    			}
+    			return false;
+    			
     		case "Tour":
-    			
+    			if(c_initial.getX() == c_final.getX())
+    			{
+    				
+    			}
+    			else
+    			{
+    				
+    			}
     			break;
     		case "Roi":
     			
@@ -55,11 +71,12 @@ public class Terrain
     			break;
     			
     	}
+    	return false;
     }
    
     public boolean deplacement (Case c_initial, Case c_final)
     {
-    	if(!(c_initial.estVide()) && this.terrain [c_initial.getX()] [c_initial.getY()].retourneContenu().deplacement() )
+    	if(!(c_initial.estVide()) && this.terrain [c_initial.getX()] [c_initial.getY()].retourneContenu().estValide(c_initial, c_final) )
     	{
     		c_final.changeContenu (c_initial.retourneContenu());
     		c_initial.changeContenu (null);

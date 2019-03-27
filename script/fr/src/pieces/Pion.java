@@ -10,9 +10,9 @@ public class Pion extends Piece {
 	 */
 	public Pion (Color couleur)
 	{
-		super(couleur);
+		super(couleur, "Pion");
 		this.initial = true;
-		this.name = "Pion";
+		
 	}
 	
 	public boolean getStatus()
@@ -24,13 +24,13 @@ public class Pion extends Piece {
 	public boolean estValide(Case c_initial, Case c_final)
 	{
 		// deplacement normal
-		if( (c_final().getX() == c_initial.getX && ( c_final().getY() == c_initial.getY()+1 
-				|| (c_final().getY() == c_initial.getY()+2 && this.initial) ) )
+		if( (c_final.getX() == c_initial.getX() && ( c_final.getY() == c_initial.getY()+1 
+				|| (c_final.getY() == c_initial.getY()+2 && this.initial) ) ) )
 		{
 			return true;
 		} // mange un pion
 		else if( (c_final.getX() == c_initial.getX()+1 || c_final.getX() == c_initial.getX()-1) 
-				&& c_final.getY() == c_initial.getY()+1 && (c_final.contenu.getColor() != this.couleur && c_final.!estVide()) )
+				&& c_final.getY() == c_initial.getY()+1 && (c_final.retourneContenu().getColor() != this.couleur && !(c_final.estVide() ) ) )
 		{
 			return true;
 		}
