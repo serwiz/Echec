@@ -47,7 +47,10 @@ public class Terrain
     		case "Tour":
     			if(c_initial.getX() == c_final.getX())
     			{
-    				
+    				for(i=c_initial.getY()+1; i<c_final.getY()+1; ++i)
+    				{
+    					
+    				}
     			}
     			else
     			{
