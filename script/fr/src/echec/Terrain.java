@@ -45,17 +45,24 @@ public class Terrain
     			return false;
     			
     		case "Tour":
-    			if(c_initial.getX() == c_final.getX())
+    			int x = 0;
+    			if(c_initial.getX() == c_final.getX() && c_final.getY() > c_initial.getY())
     			{
-    				for(i=c_initial.getY()+1; i<c_final.getY()+1; ++i)
+    				x = 1;
+    			}
+    			else if(c_initial.getX() == c_final.getX() && c_final.getY() < c_initial.getY())
+    			{
+    				x = -1;
+    			}
+    			
+    			for(i=c_initial.getY()+1; i<c_final.getY()+1; i = i+x)
+    			{
+    				if(this.terrain [c_final.getX()] [i].retourneContenu() != null)
     				{
     					
     				}
-    			}
-    			else
-    			{
-    				
-    			}
+    			}	
+ 
     			break;
     		case "Roi":
     			
