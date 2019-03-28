@@ -48,6 +48,6 @@ public abstract class Piece
 				|| ((c_final.retourneContenu().getColor()!= this.couleur) && valide) );
 	}
     
-    public abstract boolean estValide(Case c_inital, Case c_final);
+    public abstract boolean estValide(Case c_initial, Case c_final);
   
 }

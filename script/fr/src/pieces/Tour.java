@@ -1,11 +1,13 @@
 package fr.src.pieces;
 import fr.src.echec.Case;
+import fr.src.echec.Piece;
+import java.awt.Color;
 
 public class Tour extends Piece {
 	
 	public Tour(Color couleur) 
 	{
-		super(couleur, "Tour");
+		super(couleur, "tour");
 	}
 	
 	@Override

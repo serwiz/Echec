@@ -27,13 +27,18 @@ public class Terrain
     		}
     	}
     }
-    
+    /**
+     * Fonction permettant de tester l'existence d'un obstacle sur le déplacement d'une pièce
+     * @param		c_initial	case de départ de la pièce
+     * @param		c_final		case d'arrivée de la pièce
+     * @return 		Vrai si il y a un obstacle sur le déplacement de la pièce Faux sinon
+     */
    public boolean existeObstacle (Case c_initial, Case c_final)
     {
-	   int i;
+	    int i;
     	switch (c_initial.retourneContenu().getName())
     	{
-    		case "Pion":
+    		case "pion":
     			if ((c_initial.getX()+1 == c_final.getX() || c_final.getX() == c_initial.getX()-1) && c_final.getY() == c_initial.getY()+1)
     				return false;
     			
@@ -44,42 +49,65 @@ public class Terrain
     			}
     			return false;
     			
-    		case "Tour":
-    			int x = 0;
-    			if(c_initial.getX() == c_final.getX() && c_final.getY() > c_initial.getY())
+    		case "tour":
+    			// Déplacement vertiacle case finale au-dessus de la case initiale
+       			if(c_initial.getX() == c_final.getX() && c_final.getY() > c_initial.getY())
     			{
-    				x = 1;
+    				for(i=c_initial.getY()+1; i<c_final.getY(); ++i)
+        			{
+        				if(this.terrain [c_final.getX()] [i].retourneContenu() != null)
+        				{
+        					return true;
+        				}
+        			}	
     			}
-    			else if(c_initial.getX() == c_final.getX() && c_final.getY() < c_initial.getY())
+       			// Déplacement verticale case finale en-dessous de la case initiale
+       			else if(c_initial.getX() == c_final.getX() && c_final.getY() < c_initial.getY())
     			{
-    				x = -1;
+    				for(i=c_initial.getY()-1; i>c_final.getY(); --i)
+        			{
+        				if(this.terrain [c_final.getX()] [i].retourneContenu() != null)
+        				{
+        					return true;
+        				}
+        			}
     			}
-    			
-    			for(i=c_initial.getY()+1; i<c_final.getY()+1; i = i+x)
+       			// Déplacement horizontale case finale à droite de la case initiale
+    			else if(c_initial.getY() == c_final.getY() && c_final.getX() > c_initial.getX())
     			{
-    				if(this.terrain [c_final.getX()] [i].retourneContenu() != null)
-    				{
-    					
-    				}
-    			}	
- 
-    			break;
-    		case "Roi":
-    			
-    			break;
-    		case "Reine":
-    			
-    			break;
-    		case "Fou":
-    			
-    			break;
-    		case "Cavalier":
+    				for(i=c_initial.getX()+1; i<c_final.getX(); ++i)
+        			{
+        				if(this.terrain [i] [c_initial.getY()].retourneContenu() != null)
+        				{
+        					return true;
+        				}
+        			}	
+    			}
+       			// Déplacement horizontale case finale à gauche de la case initiale
+    			else if(c_initial.getY() == c_final.getY() && c_final.getX() < c_initial.getX())
+    			{
+    				for(i=c_initial.getX()-1; i>c_final.getX(); --i)
+        			{
+        				if(this.terrain [i] [c_initial.getY()].retourneContenu() != null)
+        				{
+        					return true;
+        				}
+        			}	
+    			} 			
     			return false;
+    		case "roi":
+    			return (c_final.retourneContenu() != null && c_final.retourneContenu().getColor() == c_initial.retourneContenu().getColor());
+    		case "reine":
+    			
     			break;
+    		case "fou":
+    			
+    			break;
+    		case "cavalier":
+    			return false;
+    			
     		default:
     			return false;
-    			break;
-    			
     	}
     	return false;
     }

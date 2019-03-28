@@ -10,7 +10,7 @@ public class Pion extends Piece {
 	 */
 	public Pion (Color couleur)
 	{
-		super(couleur, "Pion");
+		super(couleur, "pion");
 		this.initial = true;
 		
 	}
