@@ -1,4 +1,4 @@
-package fr.src.echec;
+package lib.src.echec;
 /**
  * Cette classe représente le terrain (et ses méthodes), qui est unique et contient un tableau de type Case, 
  * c'est par lui que tout se fera.

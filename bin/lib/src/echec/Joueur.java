@@ -1,4 +1,4 @@
-package fr.src.echec;
+package lib.src.echec;
 /**
  * Cette classe concerne les joueurs et leurs méthodes
  *

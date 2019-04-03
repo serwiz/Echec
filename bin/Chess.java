@@ -1,8 +1,8 @@
-import fr.src.echec.*;
-import fr.src.pieces.*;
+import lib.src.echec.*;
+import lib.src.pieces.*;
 
 // Mainclass du projet
-public class Game 
+public class Chess
 {
 
 	public static void main(String[] args) 

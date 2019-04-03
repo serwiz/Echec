@@ -1,4 +1,4 @@
-package fr.src.echec;
+package lib.src.echec;
 import java.awt.Color;
 /**
  * Cette classe concerne les pieces du jeu d'échec et leurs méthodes.

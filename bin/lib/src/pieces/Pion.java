@@ -1,6 +1,6 @@
-package fr.src.pieces;
-import fr.src.echec.Case;
-import fr.src.echec.Piece;
+package lib.src.pieces;
+import lib.src.echec.Case;
+import lib.src.echec.Piece;
 import java.awt.Color;
 
 public class Pion extends Piece {
